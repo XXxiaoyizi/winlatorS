@@ -304,20 +304,4 @@ public final class FEXCoreManager {
         spinner.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, itemList));
         AppUtils.setSpinnerSelectionFromValue(spinner, shortcut.getExtra("fexcoreVersion", shortcut.container.getFEXCoreVersion()));
     }
-
-    public static void createAppConfigFiles(Context ctx) {
-        String[] programsName = {"winhandler.exe"};
-        for (String programName : programsName) {
-            File configFile = new File(ctx.getFilesDir(), "imagefs/home/xuser/.fex-emu/AppConfig/" + programName + ".json");
-            if (!configFile.exists()) {
-                switch (programName) {
-                    case "winhandler.exe":
-                        writeToConfigFile(configFile, "Fastest", "Disabled", "Fast");
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-    }
 }

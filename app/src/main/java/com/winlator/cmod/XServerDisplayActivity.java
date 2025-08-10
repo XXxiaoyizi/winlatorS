@@ -1173,9 +1173,6 @@ public class XServerDisplayActivity extends AppCompatActivity implements Navigat
         // Add the launcher to our environment
         environment.addComponent(guestProgramLauncherComponent);
 
-        // Generate fexcore per app settings
-        FEXCoreManager.createAppConfigFiles(this);
-
         // Start all environment components (XServer, Audio, etc.)
         environment.startEnvironmentComponents();
 
