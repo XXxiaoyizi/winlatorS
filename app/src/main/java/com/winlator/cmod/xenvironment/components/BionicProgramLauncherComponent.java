@@ -356,10 +356,9 @@ public class BionicProgramLauncherComponent extends GuestProgramLauncherComponen
             synchronized (lock) {
                 pid = -1;
             }
-            if (!environment.isWinetricksRunning()) {
-                if (terminationCallback != null)
-                    terminationCallback.call(status);
-            }
+
+            if (terminationCallback != null)
+                terminationCallback.call(status);
         });
     }
 
@@ -415,12 +414,5 @@ public class BionicProgramLauncherComponent extends GuestProgramLauncherComponen
         }
 
         return output.toString();
-    }
-
-    public void restartWineServer() {
-        ProcessHelper.terminateAllWineProcesses();
-        pid = execGuestProgram();
-        Log.d("BionicProgramLauncherComponent", "Wine restarted successfully");
-
     }
 }
