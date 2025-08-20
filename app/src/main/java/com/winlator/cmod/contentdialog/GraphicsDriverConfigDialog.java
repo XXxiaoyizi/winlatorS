@@ -268,7 +268,7 @@ public class GraphicsDriverConfigDialog extends ContentDialog {
             }
         }
 
-        AppUtils.setSpinnerSelectionFromValue(spinner, DefaultVersion.WRAPPER);
+        AppUtils.setSpinnerSelectionFromValue(spinner, GPUInformation.isDriverSupported(DefaultVersion.WRAPPER_ADRENO, getContext()) ? DefaultVersion.WRAPPER_ADRENO : DefaultVersion.WRAPPER);
     }
 
 }
